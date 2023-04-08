@@ -1,0 +1,2 @@
+1.  "CovidStatMonitor". It clearly indicates the app's purpose, which is to monitor statistics about COVID-19, while also emphasizing its focus on tracking the latest data. The name is concise and easy to remember, which is always a plus for any app.
+2. Build the backend for the application using Python and FAST API as reccoemnded by Iordan.
