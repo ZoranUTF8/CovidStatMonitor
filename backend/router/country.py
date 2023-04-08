@@ -8,11 +8,15 @@ router = APIRouter()
 # Define the routes in the router instance:
 
 # World statistics
+
+
 @router.get("/world")
 def get_all_countries():
     return {"message": "Success", "data": CountryController.get_all_countries_data()}
 
 # Single country statistics
+
+
 @router.get("/")
 @router.get("/{country_name}")
 def get_single_country(country_name: str = None):
