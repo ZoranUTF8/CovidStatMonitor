@@ -1,3 +1,10 @@
+<!-- This code defines a Vue.js component called "CountrySelect" that displays a dropdown
+menu of countries and, upon selection of a country, retrieves and displays COVID-19
+statistics for that country using an external API. The component also includes error
+handling and a loading spinner while data is being retrieved.
+The displayed statistics include the total number of cases, recovered cases,
+deaths, new cases, active cases, and the last update time. -->
+
 <template>
   <div>
     <label
@@ -9,7 +16,7 @@
       id="country-select"
       v-model="selectedCountry"
       @change="onChange"
-      class="form-select mt-10 block mx-auto w-1/2 border p-3 rounded text-center"
+      class="cursor-pointer form-select mt-10 block mx-auto w-1/2 border p-3 rounded text-center"
     >
       <option disabled value="">Select Country</option>
       <option
@@ -32,12 +39,12 @@
       </div>
       <div
         v-if="!loading && countryData != null"
-        class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl"
+        class="cursor-pointer max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:shadow-xl"
       >
         <div class="flex flex-col items-center">
           <div class="p-8 flex flex-col items-center">
             <div
-              class="text-center uppercase tracking-wide text-indigo-500 font-semibold text-3xl"
+              class="text-center uppercase tracking-wide text-blue-700 hover:text-blue-500 font-semibold text-3xl"
             >
               Country Name:
               {{
@@ -100,8 +107,16 @@
           </div>
         </div>
       </div>
-
-      <div v-if="errorMessage" class="text-red-500 text-center mt-3 text-2xl">
+      <div
+        v-if="countryData === null && !loading"
+        class="max-w-md mx-auto bg-white rounded-xl shadow-md flex justify-center items-center content-center h-64 hover:shadow-xl cursor-pointer"
+      >
+        <h1 class="text-2xl font-bold mb-8">Please pick your country above.</h1>
+      </div>
+      <div
+        v-if="errorMessage"
+        class="text-red-500 text-center mt-3 text-2xl cursor-pointer hover:shadow-xl"
+      >
         {{ errorMessage }}
       </div>
     </div>

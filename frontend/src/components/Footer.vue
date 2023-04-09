@@ -1,3 +1,10 @@
+<!-- This is a Vue.js component that defines the layout and content of a website footer.
+It includes a company logo and links to various pages of the website, such as Home,
+Statistics, and Contact Us. The component also displays the copyright information,
+which includes the name of the website creator and the year.
+The styling of the component is scoped to ensure that it only applies to this specific
+component. -->
+
 <template>
   <footer class="bg-white rounded-lg shadow m-4">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">

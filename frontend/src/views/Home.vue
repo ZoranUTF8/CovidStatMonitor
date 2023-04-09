@@ -1,6 +1,17 @@
+<!-- This code defines a Vue component named "Home" which displays the welcome message
+and statistics of COVID-19 cases in the world. It imports two components, LoadingSpinner
+and WorldData, which are used to display a loading spinner and the world statistics data,
+respectively. The component has a "data" object that stores information about the loading
+state, world data, and error message. When the component is created,
+it calls the "refreshWorldData" method to retrieve the latest world statistics data using the CovidApiService.
+If successful, the world data is stored in the "worldData" array, and if there's an error,
+the error message is displayed.
+-->
+
 <template>
   <div class="bg-gray-100 min-h-screen">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <!-- WELCOME TEXT -->
       <div class="lg:text-center">
         <p
           class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
@@ -36,6 +47,7 @@
           </div>
         </div>
 
+        <!-- WORLD DATA DISPLAY -->
         <div v-if="!loading && !errorMessage" class="mt-10">
           <h3 class="text-lg font-medium text-gray-900">World Statistics</h3>
           <WorldData :worldData="worldData" />
@@ -56,16 +68,20 @@ export default {
     return { loading: true, worldData: [], errorMessage: null };
   },
   created: async function () {
-    try {
-      this.loading = true;
-      const worldDataResponse = await CovidApiService.getWorldData();
-      this.worldData = worldDataResponse.data.data;
-
-      this.loading = false;
-    } catch (error) {
-      this.errorMessage = error.message;
-      this.loading = false;
-    }
+    await this.refreshWorldData();
+  },
+  methods: {
+    async refreshWorldData() {
+      try {
+        this.loading = true;
+        const worldDataResponse = await CovidApiService.getWorldData();
+        this.worldData = worldDataResponse.data.data;
+        this.loading = false;
+      } catch (error) {
+        this.errorMessage = error.message;
+        this.loading = false;
+      }
+    },
   },
 };
 </script>

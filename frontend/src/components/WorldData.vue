@@ -1,3 +1,10 @@
+<!-- This is a Vue.js component called "WorldData" that renders a grid of "WorldDataBox"
+components using the "v-for" directive. It takes in an array of "worldData"
+props and passes the individual data to each "WorldDataBox" component.
+The "worldData" prop is required and the "WorldDataBox" component is imported 
+as a child component.
+ -->
+
 <template>
   <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
     <WorldDataBox
@@ -12,7 +19,6 @@
 </template>
 
 <script>
-import moment from "moment";
 import WorldDataBox from "./WorldDataBox.vue";
 
 export default {
@@ -22,13 +28,6 @@ export default {
     worldData: {
       type: Array,
       required: true,
-    },
-  },
-  computed: {
-    timestamp: function () {
-      return moment(this.worldData["Last Update"]).format(
-        "MMMM Do YYYY,h:mm:ss a"
-      );
     },
   },
 };

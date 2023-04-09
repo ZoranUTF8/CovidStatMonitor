@@ -1,3 +1,9 @@
+<!-- This code defines a Vue.js component called "LoadingSpinner" 
+that displays a spinning icon and a text message that says "Loading...".
+The spinning icon is an SVG file consisting of two paths that rotate around
+the center of the image. The component is meant to be used as a loading indicator
+while data is being fetched or processed in an application. -->
+
 <template>
   <div role="status">
     <svg
@@ -24,9 +30,4 @@
 export default { name: "LoadingSpinner" };
 </script>
 
-<style>
-.spinnerImg {
-  max-width: 200px;
-  max-height: 200px;
-}
-</style>
+<style></style>

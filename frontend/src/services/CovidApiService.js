@@ -1,3 +1,9 @@
+/*The code defines a class CovidApiService with several static
+methods that make HTTP requests to a COVID-19 statistics API.
+The getWorldData() method retrieves global COVID-19 statistics,
+getSingleCountryStats(countryName) retrieves statistics for a specific country,
+and sendContactEmail(formData) sends a contact form email to the backend API. */
+
 import axios from "axios";
 
 export class CovidApiService {
@@ -9,5 +15,9 @@ export class CovidApiService {
 
   static getSingleCountryStats(countryName) {
     return axios.get(`${this.baseUrl}/${countryName}`);
+  }
+
+  static sendContactEmail(formData) {
+    return axios.post(`http://127.0.0.1:8000/v1/send-email`, formData);
   }
 }

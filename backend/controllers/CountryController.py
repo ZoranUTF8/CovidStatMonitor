@@ -1,3 +1,4 @@
+# Import required modules
 import requests
 
 
@@ -12,13 +13,13 @@ class CountryController:
     def get_all_countries_data():
         url = f"{CountryController.BASE_URL}/world"
         response = requests.get(url)
-        response.raise_for_status()
-        return response.json()
+        response.raise_for_status()  # Raise an exception for any errors
+        return response.json()  # Return the response in JSON format
 
 # Static method to get data for a specific country
     @staticmethod
     def get_single_country_data(country_name: str):
         url = f"{CountryController.BASE_URL}/{country_name}"
         response = requests.get(url)
-        response.raise_for_status()
-        return response.json()
+        response.raise_for_status()  # Raise an exception for any errors
+        return response.json()  # Return the response in JSON format

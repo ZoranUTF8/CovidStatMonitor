@@ -1,22 +1,21 @@
+# Importing required modules
 from fastapi import APIRouter, HTTPException
+import requests
+# Importing controllers and requests module
 from controllers.CountryController import CountryController
 import requests
 
-# Create an instance of the APIRouter class:
+# Create an instance of the APIRouter class
 router = APIRouter()
 
 # Define the routes in the router instance:
 
 # World statistics
-
-
 @router.get("/world")
 def get_all_countries():
     return {"message": "Success", "data": CountryController.get_all_countries_data()}
 
 # Single country statistics
-
-
 @router.get("/")
 @router.get("/{country_name}")
 def get_single_country(country_name: str = None):

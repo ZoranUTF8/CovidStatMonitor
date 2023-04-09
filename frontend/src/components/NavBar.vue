@@ -1,3 +1,10 @@
+<!-- The code defines a Vue.js component called "NavBar" that creates a responsive
+navigation bar for a website. The navigation bar includes links to different pages
+of the website and a mobile menu button that appears on smaller screens.
+The component uses Vue's router to handle page routing and toggles the visibility
+of the mobile menu button using a data property called "showMenu".
+The component also includes some basic styling using Tailwind CSS classes. -->
+
 <template>
   <div>
     <div class="bg-lightblue-100">

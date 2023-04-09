@@ -1,3 +1,12 @@
+/* This is a CSS file that uses Tailwind CSS framework.
+The @tailwind directives are used to generate the base styles,
+components, and utilities that are provided by Tailwind.
+The base styles are the default styles applied to the HTML elements,
+while the components and utilities are used to style custom components
+and apply utility classes respectively.
+Overall, the file provides a set of pre-defined CSS styles and classes that
+can be used to style a website or application. */
+
 @tailwind base;
 
 @tailwind components;
