@@ -6,7 +6,7 @@ and "CountrySelect" components for displaying loading spinners and the
 country selection dropdown. -->
 
 <template>
-  <div class="bg-gray-100 min-h-screen pt-5">
+  <div class="bg-gray-100 min-h-screen pt-5 p-3">
     <h1 class="text-4xl font-bold text-center">Specific Country Statistics</h1>
     <CountrySelect />
   </div>

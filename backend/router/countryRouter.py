@@ -3,7 +3,7 @@ from fastapi import APIRouter, HTTPException
 import requests
 # Importing controllers and requests module
 from controllers.CountryController import CountryController
-import requests
+
 
 # Create an instance of the APIRouter class
 router = APIRouter()

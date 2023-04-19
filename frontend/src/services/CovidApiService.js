@@ -7,7 +7,7 @@ and sendContactEmail(formData) sends a contact form email to the backend API. */
 import axios from "axios";
 
 export class CovidApiService {
-  static baseUrl = "http://127.0.0.1:8000/v1/countries";
+  static baseUrl = "http://0.0.0.0:8000/v1/countries";
 
   static getWorldData() {
     return axios.get(`${this.baseUrl}/world`);
@@ -15,9 +15,5 @@ export class CovidApiService {
 
   static getSingleCountryStats(countryName) {
     return axios.get(`${this.baseUrl}/${countryName}`);
-  }
-
-  static sendContactEmail(formData) {
-    return axios.post(`http://127.0.0.1:8000/v1/send-email`, formData);
   }
 }

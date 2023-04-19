@@ -1,4 +1,5 @@
-# Import required modules
+# separate module to encapsulate all the logic related to communicating with the COVID-19 API. This module can contain functions for getting data for a specific country or getting data for all countries,
+# Custom CountryController class which handles the api communication
 import requests
 
 

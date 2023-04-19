@@ -1,0 +1,61 @@
+----------------------------------------------------------------
+
+
+Since this is my first time using Docker, if the Dockerstart.sh script does not
+function on your machine, please use instead the start.sh to run the application directly. Thank you
+
+
+----------------------------------------------------------------
+If you want to run with the docker file you can run the dockerStart.sh like this:
+
+chmod +x dockerStart.sh
+
+./dockerStart.sh
+
+Available on:
+  http://127.0.0.1:8080
+  http://172.19.0.2:8080
+
+
+----------------------------------------------------------------
+
+
+If the app doesn't not work with the ./dockerStart.sh please run it like this:
+
+
+chmod +x start.sh
+
+./start.sh
+
+App schould be running at:
+  - Local:   http://localhost:8080/ 
+  - Network: http://192.168.111.106:8080/Ï
+
+
+----------------------------------------------------------------
+
+
+
+Manual docker build:
+
+Cd to /frontend:
+
+Run terminal with: 
+
+1. docker build -t frontend .
+
+2. docker network create my_network   
+                  
+3 .docker run -it -p 8080:8080 --rm --network my_network  --name dockerize-frontend frontend
+
+Cd to DockerReady/backend:
+
+1. docker build . -t backend
+
+2. docker run --name backend --rm --network my_network  -p 8000:8000 backend
+
+View app on:
+  http://127.0.0.1:8080 - Local
+  http://172.19.0.2:8080 - Network
+
+Thank you

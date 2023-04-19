@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Check if pip is installed
+if ! command -v pip &> /dev/null
+then
+    echo "pip is not installed. Please install pip and try again."
+    exit 1
+fi
+
+
 # Change directory to the backend folder
 cd backend
 
@@ -16,4 +24,4 @@ cd ../frontend
 npm install
 
 # Start frontend server
-npm start
+npm run serve

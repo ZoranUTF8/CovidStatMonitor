@@ -31,10 +31,10 @@ deaths, new cases, active cases, and the last update time. -->
       <!-- SPINNER -->
       <div
         v-if="loading"
-        class="flex items-center justify-center h-full absolute top-0 left-0 right-0 bottom-0 z-50"
+        class="flex items-center justify-center h-full w-full fixed top-0 left-0 right-0 bottom-0 z-50 bg-gray-900 bg-opacity-50"
       >
-        <div class="flex items-center justify-center h-32 w-32 mt-40">
-          <LoadingSpinner class="w-25 h-25 mt-50" />
+        <div class="flex items-center justify-center h-32 w-32">
+          <LoadingSpinner class="w-25 h-25" />
         </div>
       </div>
       <div
