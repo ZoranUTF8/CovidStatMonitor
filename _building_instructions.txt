@@ -1,7 +1,6 @@
 ----------------------------------------------------------------
 
-
-Since this is my first time using Docker, if the Dockerstart.sh script does not
+If the Dockerstart.sh script does not
 function on your machine, please use instead the start.sh to run the application directly. Thank you
 
 
